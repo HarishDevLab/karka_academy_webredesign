@@ -299,9 +299,11 @@ export default function HeroScene({ variant = 'academy' }: { variant?: HeroVaria
         const contentCenter=contentBounds.getCenter(new T.Vector3());
         const contentSize=contentBounds.getSize(new T.Vector3());
         const keyLight=new T.PointLight(0xffffff,26,30);keyLight.position.set(3,3,5);scene.add(keyLight);scene.add(new T.AmbientLight(0xffffff,1.4));
-        renderer=new T.WebGLRenderer({alpha:true,antialias:window.innerWidth>650,powerPreference:'low-power'});
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,window.innerWidth<700?1.05:1.4));renderer.setSize(host.clientWidth,host.clientHeight);renderer.outputColorSpace=T.SRGBColorSpace;
-        renderer.domElement.setAttribute('aria-hidden','true');renderer.domElement.className='hero-scene-canvas';Object.assign(renderer.domElement.style,{position:'absolute',inset:'0',width:'100%',height:'100%',display:'block',zIndex:'2',pointerEvents:'none'});host.dataset.webgl='ready';host.appendChild(renderer.domElement);
+        renderer=new T.WebGLRenderer({alpha:true,antialias:true,powerPreference:'high-performance'});
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setSize(host.clientWidth, host.clientHeight, false);
+        renderer.outputColorSpace=T.SRGBColorSpace;
+        renderer.domElement.setAttribute('aria-hidden','true');renderer.domElement.className='hero-scene-canvas';Object.assign(renderer.domElement.style,{position:'absolute',inset:'0',width:'100%',height:'100%',display:'block',zIndex:'2',pointerEvents:'none',imageRendering:'auto',transform:'translateZ(0)',backfaceVisibility:'hidden'});host.dataset.webgl='ready';host.appendChild(renderer.domElement);
         const draw=()=>{
           if(disposed||!renderer||!scene||!camera||!rig)return;
           if(!reduced){const now=performance.now()*.001;

@@ -72,10 +72,10 @@ const orgJsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-IN" data-theme="light" suppressHydrationWarning>
+    <html lang="en-IN" data-theme="dark" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/karka-logo.webp" type="image/webp" />
-        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('karka-theme');var v=t==='dark'?'dark':'light';document.documentElement.dataset.theme=v;document.documentElement.style.colorScheme=v}catch(e){document.documentElement.dataset.theme='light'}" }} />
+        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('karka-theme');var v=t==='light'?'light':'dark';document.documentElement.dataset.theme=v;document.documentElement.style.colorScheme=v}catch(e){document.documentElement.dataset.theme='dark';document.documentElement.style.colorScheme='dark'}" }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd).replace(/</g, '\\u003c') }} />
       </head>
       <body>

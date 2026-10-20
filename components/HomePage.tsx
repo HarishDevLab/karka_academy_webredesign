@@ -8,7 +8,7 @@ import LearnerReviews from './LearnerReviews';
 import LearnerVideos from './LearnerVideos';
 import PlacementTicker from './PlacementTicker';
 import PayAfterPlacementVisual from './PayAfterPlacementVisual';
-import { courses, faqs, WHATSAPP_URL } from '@/lib/content';
+import { courses, faqs, heroStats, learningSignals, workstreams, WHATSAPP_URL } from '@/lib/content';
 
 function Eyebrow({ children }: { children: React.ReactNode }) { return <div className="section-eyebrow"><span className="eyebrow-mark" />{children}</div>; }
 
@@ -24,6 +24,14 @@ export default function HomePage() {
           <div className="hero-actions">
             <Link href="/courses" className="button button-primary button-large">Find your career track <ArrowRight size={17} /></Link>
             <Link href="/roadmap" className="button button-quiet button-large">How Pay After Placement works <ArrowUpRight size={17} /></Link>
+          </div>
+          <div className="hero-stat-grid" aria-label="Karka learning snapshot">
+            {heroStats.map((item) => (
+              <div key={item.label} className="hero-stat-card">
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
           </div>
           <div className="hero-proofline"><span><Check size={15} /> Project-led learning</span><span><Check size={15} /> Mentor guidance</span><span><Check size={15} /> Career preparation</span></div>
           <p className="hero-footnote">Pay After Placement is available on eligible programs and is subject to written program terms.</p>
@@ -60,6 +68,28 @@ export default function HomePage() {
             <article className="approach-step"><span className="step-index">03</span><div className="step-icon lilac"><Target size={22} /></div><div><h3>Prepare for opportunity</h3><p>Strengthen your portfolio, communication and interview skills.</p></div><ArrowDownRight className="step-arrow" size={21} /></article>
             <article className="approach-step"><span className="step-index">04</span><div className="step-icon ink"><BriefcaseBusiness size={22} /></div><div><h3>Keep moving forward</h3><p>Use feedback and mentoring to keep growing beyond a certificate.</p></div><ArrowUpRight className="step-arrow" size={21} /></article>
           </div>
+        </div>
+      </section>
+
+      <section className="section-pad shell">
+        <div className="section-heading-row"><div><Eyebrow>What we’re building</Eyebrow><h2>Momentum across the learner journey<span className="hero-period">.</span></h2></div><p>These are the core learning experiences and product workstreams currently shaping the student journey.</p></div>
+        <div className="signal-grid">
+          {learningSignals.map((signal) => (
+            <article key={signal.title} className="signal-card">
+              <span className="signal-card-mark">✳</span>
+              <h3>{signal.title}</h3>
+              <p>{signal.description}</p>
+            </article>
+          ))}
+        </div>
+        <div className="workstream-grid">
+          {workstreams.map((work) => (
+            <article key={work.title} className="workstream-card">
+              <div className="workstream-meta"><span>{work.status}</span><span className="status-dot" /></div>
+              <h3>{work.title}</h3>
+              <p>{work.detail}</p>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -91,6 +91,25 @@ export const testimonials = [
   { quote: 'Getting feedback helped me identify what to practise next.', context: 'Illustrative feedback theme — verify before publishing', tag: 'Mentor feedback' },
 ];
 
+export const heroStats = [
+  { value: '1000+', label: 'learners supported' },
+  { value: '6 months', label: 'project-driven tracks' },
+  { value: '1:1', label: 'mentor feedback loops' },
+  { value: '90%', label: 'portfolio-first learning' },
+];
+
+export const learningSignals = [
+  { title: 'Career-first curriculum', description: 'Each track is shaped around real work outputs, portfolio proof and role readiness.' },
+  { title: 'Mentor-guided learning', description: 'Learners get feedback loops, weekly review and practical next steps instead of isolated theory.' },
+  { title: 'Practical project flow', description: 'The experience blends concept, build, critique and final showcase into one journey.' },
+];
+
+export const workstreams = [
+  { title: 'Landing page storytelling', status: 'live', detail: 'Homepage messaging, trust signals and conversion-focused structure.' },
+  { title: 'Course discovery system', status: 'planned', detail: 'Dynamic program filtering and audience-specific pages for future course marketing.' },
+  { title: 'Lead capture flow', status: 'in progress', detail: 'Lead form, CRM follow-up and intake process for future enrollment pipeline.' },
+];
+
 export const faqs = [
   { question: 'What does Pay After Placement mean?', answer: 'Karka’s published model describes tuition being paid after you secure a qualifying job, rather than as upfront tuition. The public roadmap currently lists ₹40,000. Before enrolling, confirm the applicable track, qualifying salary, payment trigger, eligibility, exclusions and written agreement with the academy.' },
   { question: 'Is a job guaranteed?', answer: 'Karka advertises placement support, but its published FAQ notes that an individual job cannot strictly be guaranteed. Outcomes depend on eligibility, skills, interview performance, available opportunities and other factors.' },
