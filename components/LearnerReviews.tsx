@@ -20,14 +20,14 @@ export default function LearnerReviews() {
         <div className="learner-review-grid">
           {reviews.map((review, index) => (
             <article className={`learner-review-card review-accent-${review.color}`} key={review.name}>
-              <div className="learner-review-top"><span className="review-quote-mark"><Quote size={18} /></span><span className="review-number">REVIEW / 0{index + 1}</span></div>
+              <div className="learner-review-top"><span className="review-quote-mark"><Quote size={18} /></span><span className="review-number"> 0{index + 1}</span></div>
               <blockquote>“{review.quote}”</blockquote>
-              <div className="learner-review-bottom"><span className={`review-avatar review-avatar-${review.color}`}>{review.initials}</span><span className="review-identity"><strong>{review.name}</strong><small>{review.course}</small></span><span className="review-card-arrow" aria-hidden="true"><ArrowUpRight size={15} /></span></div>
+              <div className="learner-review-bottom"><span className={`review-avatar review-avatar-${review.color}`}>{review.initials}</span><span className="review-identity"><strong>{review.name}</strong><small>{review.course}</small></span></div>
               <span className="review-card-orbit" aria-hidden="true" />
             </article>
           ))}
         </div>
-        <p className="reviews-source-note">These excerpts reflect feedback text in the original site snapshot. Confirm attribution and permission for republication before launch; no star rating has been added or inferred.</p>
+        <p className="reviews-source-note">information(feedbacks) from the original website</p>
       </div>
     </section>
   );

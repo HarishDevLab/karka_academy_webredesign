@@ -104,17 +104,17 @@ export const learningSignals = [
   { title: 'Practical project flow', description: 'The experience blends concept, build, critique and final showcase into one journey.' },
 ];
 
-export const workstreams = [
-  { title: 'Landing page storytelling', status: 'live', detail: 'Homepage messaging, trust signals and conversion-focused structure.' },
-  { title: 'Course discovery system', status: 'planned', detail: 'Dynamic program filtering and audience-specific pages for future course marketing.' },
-  { title: 'Lead capture flow', status: 'in progress', detail: 'Lead form, CRM follow-up and intake process for future enrollment pipeline.' },
-];
+//export const workstreams = [
+//  { title: 'Landing page storytelling', status: 'live', detail: 'Homepage messaging, trust signals and conversion-focused structure.' },
+//  { title: 'Course discovery system', status: 'planned', detail: 'Dynamic program filtering and audience-specific pages for future course marketing.' },
+//  { title: 'Lead capture flow', status: 'in progress', detail: 'Lead form, CRM follow-up and intake process for future enrollment pipeline.' },
+//];
 
 export const faqs = [
-  { question: 'What does Pay After Placement mean?', answer: 'Karka’s published model describes tuition being paid after you secure a qualifying job, rather than as upfront tuition. The public roadmap currently lists ₹40,000. Before enrolling, confirm the applicable track, qualifying salary, payment trigger, eligibility, exclusions and written agreement with the academy.' },
-  { question: 'Is a job guaranteed?', answer: 'Karka advertises placement support, but its published FAQ notes that an individual job cannot strictly be guaranteed. Outcomes depend on eligibility, skills, interview performance, available opportunities and other factors.' },
-  { question: 'Do I need previous coding experience?', answer: 'Some tracks are designed for beginners while others suit learners who already have relevant foundations. Check the prerequisites for your chosen course with the admissions team.' },
-  { question: 'Will I work on projects?', answer: 'Karka’s public website highlights practical projects, portfolio building and internship-oriented work. Ask the team for the current project brief, your expected contribution, mentor involvement and whether project examples may be shared publicly.' },
+  { question: 'What does Pay After Placement mean?', answer: 'We want you to focus entirely on your learning without worrying about upfront costs. You only share your success (and the fees) after you land a tech job with a guaranteed minimum salary. It\'s our way of saying we\'re in this together.' },
+  { question: 'Is a job guaranteed?', answer: 'While no one can strictly \'guarantee\' a job, our Pay After Placement model means we are as invested in your career as you are. We don\'t succeed unless you do, which is why we go the extra mile to ensure you are job-ready.' },
+  { question: 'Do I need previous coding experience?', answer: 'Absolutely not! We\'ve designed our curriculum to take you from a curious beginner to a confident professional. Whether you\'re from arts, science, or are a complete career-switcher, we\'ve got you covered.' },
+  { question: 'Will I work on projects?', answer: 'Yes! A significant part of our curriculum involves working on live projects and simulations. You will gain hands-on experience that mimics a real corporate environment.' },
   { question: 'How do I choose a course?', answer: 'Compare the course goal, prerequisites, duration, tools covered and learning outcomes. You can also message the academy to request career guidance before selecting a track.' },
 ];
 

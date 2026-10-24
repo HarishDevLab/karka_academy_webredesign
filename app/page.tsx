@@ -3,7 +3,7 @@ import HomePage from '@/components/HomePage';
 import { SITE_URL } from '@/lib/content';
 
 export const metadata: Metadata = {
-  title: 'Skills That Build Your Future',
+  title: 'Karka AI & Tech Academy | Coding in Nagercoil',
   description: 'Explore AI-first career tracks, practical projects, internships and Pay After Placement at Karka AI & Tech Academy in Nagercoil, Tamil Nadu.',
   alternates: { canonical: SITE_URL },
   openGraph: {

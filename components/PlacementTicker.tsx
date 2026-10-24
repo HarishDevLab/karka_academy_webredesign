@@ -12,7 +12,7 @@ const destinations = [
 ];
 
 function LogoRun({ clone = false }: { clone?: boolean }) {
-  return <div className="placement-logo-run" aria-hidden={clone ? 'true' : undefined}>{destinations.map((company) => <div className="placement-logo-tile" key={`${clone ? 'clone-' : ''}${company.name}`} title={company.name}><span className="placement-logo-image-wrap"><img src={company.src} alt={clone ? '' : `${company.name} logo`} loading="lazy" width="130" height="48" /></span><span className="placement-logo-name">{company.name}</span><ArrowUpRight size={13} aria-hidden="true" /></div>)}</div>;
+  return <div className="placement-logo-run" aria-hidden={clone ? 'true' : undefined}>{destinations.map((company) => <div className="placement-logo-tile" key={`${clone ? 'clone-' : ''}${company.name}`} title={company.name}><span className="placement-logo-image-wrap"><img src={company.src} alt={clone ? '' : `${company.name} logo`} loading="lazy" width="130" height="40" /></span><span className="placement-logo-name">{company.name}</span></div>)}</div>;
 }
 
 export default function PlacementTicker() {
@@ -22,7 +22,7 @@ export default function PlacementTicker() {
       <div className="placement-logo-marquee" aria-label="Company logos displayed in Karka's original graduate destinations section">
         <div className="placement-logo-track"><LogoRun /><LogoRun clone /></div>
       </div>
-      <div className="shell placement-destinations-foot"><span>Company names and logos are taken from the supplied original Karka homepage.</span><a href="https://www.karka.academy/placement/" target="_blank" rel="noopener noreferrer">Explore placement support <ArrowUpRight size={14} /></a></div>
+      <div className="shell placement-destinations-foot"><span></span><a href="https://www.karka.academy/placement/" target="_blank" rel="noopener noreferrer">Explore placement support <ArrowUpRight size={14} /></a></div>
     </section>
   );
 }
