@@ -29,7 +29,7 @@ export default function LeadForm({ context = 'general' }: { context?: string }) 
       <label>What are you interested in?<select value={interest} onChange={(event) => setInterest(event.target.value)}><option value="">Choose an area</option><option>Full Stack Development</option><option>AI & Data Science</option><option>Generative AI</option><option>UI/UX Design</option><option>Internship</option><option>Pay After Placement</option><option>Career counselling</option><option>Other</option></select></label>
       <button className="button button-primary form-submit" type="submit"><MessageCircle size={17} /> Continue on WhatsApp <ArrowUpRight size={16} /></button>
       {sent && <p className="form-confirmation" role="status"><CheckCircle2 size={15} /> WhatsApp opened in a new tab. Send the prepared message to complete your inquiry.</p>}
-      <p className="form-privacy">This form prepares a WhatsApp message; it does not submit data to a Karka server.</p>
+      <p className="form-privacy">This form prepares a WhatsApp message.</p>
     </form>
   );
 }

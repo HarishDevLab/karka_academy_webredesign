@@ -27,7 +27,7 @@ export default function LearnerReviews() {
             </article>
           ))}
         </div>
-        <p className="reviews-source-note">information(feedbacks) from the original website</p>
+        <p className="reviews-source-note">Learner feedback shared on Karka’s original website.</p>
       </div>
     </section>
   );

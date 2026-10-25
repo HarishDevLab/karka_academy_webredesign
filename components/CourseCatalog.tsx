@@ -43,7 +43,7 @@ export default function CourseCatalog({ courses, compact = false }: { courses: C
         </article>)}
       </div>
       {filtered.length === 0 && <div className="empty-state"><Sparkles size={22} /><h3>No matching courses</h3><p>Try another search or choose a different category.</p><button className="button button-secondary" onClick={() => { setFilter('All'); setQuery(''); }} type="button">Reset filters</button></div>}
-      {!compact && <p className="catalog-footnote">Course content, duration, batch availability and eligibility may change. Confirm the current details with Karka before enrolling.</p>}
+      {!compact && <p className="catalog-footnote">Course content, duration, batch availability and eligibility may change. Confirm the current details with Karka.</p>}
       {compact && <div className="catalog-view-all"><Link className="button button-secondary" href="/courses">Explore all career tracks <ArrowRight size={16} /></Link></div>}
     </div>
   );
