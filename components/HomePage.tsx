@@ -34,14 +34,14 @@ export default function HomePage() {
             ))}
           </div>
           <div className="hero-proofline"><span><Check size={15} /> Project-led learning</span><span><Check size={15} /> Mentor guidance</span><span><Check size={15} /> Career preparation</span></div>
-          
+
         </div>
         <div className="hero-visual-wrap">
           <div className="hero-visual-burst burst-one" /><div className="hero-visual-burst burst-two" />
           <div className="hero-visual-kicker kicker-top"><span className="kicker-icon"><Code2 size={15} /></span><span><strong>Learn by doing</strong><small>Practice meets purpose</small></span></div>
           <HeroScene variant="academy" />
           <div className="hero-visual-kicker kicker-bottom"><span className="kicker-icon kicker-yellow"><Sparkles size={15} /></span><span><strong>Build your proof</strong><small>Projects · Growth</small></span></div>
-          
+
         </div>
         <div className="hero-side-note"><span>01</span><span className="side-note-line" /><span>YOUR NEXT CHAPTER STARTS HERE</span></div>
       </section>
@@ -52,7 +52,7 @@ export default function HomePage() {
         <div className="shell signal-strip-inner"><span>LEARN WITH PURPOSE</span><span className="signal-separator">❖</span><span>BUILD REAL THINGS</span><span className="signal-separator">✳</span><span>GROW WITH GUIDANCE</span><span className="signal-separator">❖</span><span>SHOW YOUR VALUE</span></div>
       </section>
 
-      <section className="pap-feature shell" aria-labelledby="pap-feature-title"><div className="pap-feature-mark" aria-hidden="true">₹</div><div className="pap-feature-copy"><span className="pap-feature-eyebrow"><span className="live-indicator"/> CAREER-FOCUSED LEARNING MODEL</span><h2 id="pap-feature-title">Pay After Placement<span>.</span></h2><p>Learn, build proof of your skills and prepare for a qualifying role. On eligible programs, payment follows the placement.</p><div className="pap-feature-visible-tag"><span className="pap-visible-dot"/> Eligibility and payment terms vary by program.</div></div><PayAfterPlacementVisual/><div className="pap-feature-action"><Link href="/roadmap" className="button button-primary button-large">See how it works <ArrowRight size={17}/></Link><small> *conditions apply.</small></div></section>
+      <section className="pap-feature shell" aria-labelledby="pap-feature-title"><div className="pap-feature-mark" aria-hidden="true">₹</div><div className="pap-feature-copy"><span className="pap-feature-eyebrow"><span className="live-indicator" /> CAREER-FOCUSED LEARNING MODEL</span><h2 id="pap-feature-title">Pay After Placement<span>.</span></h2><p>Learn, build proof of your skills and prepare for a qualifying role. On eligible programs, payment follows the placement.</p><div className="pap-feature-visible-tag"><span className="pap-visible-dot" /> Eligibility and payment terms vary by program.</div></div><PayAfterPlacementVisual /><div className="pap-feature-action"><Link href="/roadmap" className="button button-primary button-large">See how it works <ArrowRight size={17} /></Link><small> *conditions apply.</small></div></section>
 
       <section className="section-pad shell" id="career-tracks">
         <div className="section-heading-row"><div><Eyebrow>Choose your direction</Eyebrow><h2>A track for where<br className="desktop-break" /> you want to go<span className="hero-period">.</span></h2></div><p>From your first line of code to a new career chapter, start with a learning path built around useful skills and practical work.</p></div>

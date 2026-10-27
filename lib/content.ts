@@ -133,9 +133,9 @@ export function courseBySlug(slug: string) {
 
 export function courseGroupForRoute(path: string): Course[] {
   if (path === '/courses/category/coding') return courses.filter(c => c.category === 'Coding');
-  if (path === '/courses/category/gen-ai') return courses.filter(c => ['genai-foundations','genai-mastery','genai-llm-developer'].includes(c.slug));
+  if (path === '/courses/category/gen-ai') return courses.filter(c => ['genai-foundations', 'genai-mastery', 'genai-llm-developer'].includes(c.slug));
   if (path === '/courses/category/data') return courses.filter(c => c.category === 'AI & Data');
   if (path === '/courses/category/design') return courses.filter(c => c.category === 'Design');
-  if (path === '/courses/category/digital-media') return courses.filter(c => ['video-editing','graphic-designing-dm','multimedia-animation'].includes(c.slug));
+  if (path === '/courses/category/digital-media') return courses.filter(c => ['video-editing', 'graphic-designing-dm', 'multimedia-animation'].includes(c.slug));
   return courses;
 }

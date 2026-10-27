@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowUpRight, ExternalLink, Instagram, Play, Video } from 'lucide-react';
+import { ArrowUpRight, ExternalLink, Instagram, Play } from 'lucide-react';
 
 const INSTAGRAM_PROFILE = 'https://www.instagram.com/karka.ai/';
-const VERIFIED_GABRIEL_VIDEO = 'https://www.karka.academy/videos/gabrielsamraj.mp4';
+
 
 type VideoStory = { name: string; course: string; role?: string; videoUrl: string; reelUrl: string; initials: string; color: string; sourceNote?: string };
 
