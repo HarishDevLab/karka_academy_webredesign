@@ -1,6 +1,7 @@
 
 # Dependencies
 node_modules/
+redesign/
 
 # Next.js build output
 .next/
@@ -42,3 +43,59 @@ Desktop.ini
 # Temporary files
 *.tmp
 *.temp
+
+# Local agent integrations and installed skill copies
+/.adal/
+/.agents/
+/.aider-desk/
+/.augment/
+/.autohand/
+/.bob/
+/.claude/
+/.cline/
+/.codeartsdoer/
+/.codebuddy/
+/.codemaker/
+/.codestudio/
+/.commandcode/
+/.continue/
+/.cortex/
+/.crush/
+/.devin/
+/.forge/
+/.goose/
+/.grok/
+/.hermes/
+/.iflow/
+/.inferencesh/
+/.jazz/
+/.junie/
+/.kimchi/
+/.kiro/
+/.kode/
+/.lingma/
+/.mcpjam/
+/.minimax/
+/.moxby/
+/.mux/
+/.neovate/
+/.ona/
+/.openhands/
+/.pochi/
+/.posit/
+/.qoder/
+/.qwen/
+/.reasonix/
+/.roo/
+/.rovodev/
+/.tabnine/
+/.terramind/
+/.tinycloud/
+/.trae/
+/.vibe/
+/.windsurf/
+/.zcode/
+/.zencoder/
+/data/skills/
+/skills/
+/.stitch/

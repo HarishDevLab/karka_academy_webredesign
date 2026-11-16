@@ -7,18 +7,18 @@ type ThemeContextValue = { theme: Theme; toggleTheme: () => void };
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
     try {
       const saved = window.localStorage.getItem('karka-theme');
-      const initial: Theme = saved === 'light' ? 'light' : 'dark';
+      const initial: Theme = saved === 'dark' ? 'dark' : 'light';
       setTheme(initial);
       document.documentElement.dataset.theme = initial;
       document.documentElement.style.colorScheme = initial;
     } catch {
-      document.documentElement.dataset.theme = 'dark';
-      document.documentElement.style.colorScheme = 'dark';
+      document.documentElement.dataset.theme = 'light';
+      document.documentElement.style.colorScheme = 'light';
     }
   }, []);
 

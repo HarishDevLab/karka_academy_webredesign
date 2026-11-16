@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, BriefcaseBusiness, CalendarClock, Check, ChevronRight, ClipboardCheck, Code2, Compass, GraduationCap, Handshake, Layers3, Mail, MessageCircle, MapPin, ShieldCheck, Sparkles, Target, Users, Wallet } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, BriefcaseBusiness, CalendarClock, Check, ChevronRight, ClipboardCheck, Code2, Compass, GraduationCap, Handshake, Layers3, Mail, MessageCircle, MapPin, ShieldCheck, Target, Users, Wallet } from 'lucide-react';
 import CourseCatalog from './CourseCatalog';
-import HeroScene, { type HeroVariant } from './HeroScene';
+import LearningArtifact from './LearningArtifact';
+import type { HeroVariant } from './LearningArtifact';
 import LeadForm from './LeadForm';
 import { ADDRESS, EMAIL, FACEBOOK, INSTAGRAM, LINKEDIN, PHONE, PHONE_HREF, WHATSAPP_URL, audiencePages, blogPosts, courseBySlug, courseGroupForRoute, courses, pages, type Course, type PageInfo, faqs, pathForCourse, whatsAppLink } from '@/lib/content';
 
@@ -10,7 +11,7 @@ function PageHero({ eyebrow, title, description, children, variant }: { eyebrow?
   const heading = `${eyebrow || ""} ${title}`.toLowerCase();
   const inferred: HeroVariant = heading.includes("school") ? "school" : heading.includes("college") ? "college" : heading.includes("graduate") ? "graduate" : heading.includes("professional") ? "professional" : heading.includes("pay after") || heading.includes("payment") || heading.includes("roadmap") ? "payment" : heading.includes("career development") || heading.includes("placement") ? "placement" : heading.includes("career") ? "career" : heading.includes("spike") || heading.includes("generative ai") || heading.includes("gen ai") ? "ai" : heading.includes("data") ? "data" : heading.includes("digital media") || heading.includes("video editing") || heading.includes("animation") ? "media" : heading.includes("coding") || heading.includes("software development") ? "coding" : heading.includes("design") || heading.includes("creative") ? "design" : heading.includes("business") || heading.includes("finance") ? "business" : heading.includes("internship") ? "internship" : heading.includes("course") || heading.includes("track") ? "course" : heading.includes("contact") ? "contact" : heading.includes("about") ? "about" : heading.includes("blog") || heading.includes("insight") ? "insight" : "academy";
   const motif: HeroVariant = variant ?? inferred;
-  return <section className={`page-hero shell motif-${motif}`} data-hero-variant={motif}><div className="page-hero-copy">{eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}<h1>{title}</h1><p>{description}</p>{children}<Link className="pap-hero-callout" href="/roadmap"><span className="pap-callout-icon">✳</span><span><strong>PAY AFTER PLACEMENT</strong><small>Explore eligible programs, conditions and how the model works.</small></span><ArrowRight size={17} /></Link></div><div className="page-hero-visual"><HeroScene variant={motif} /></div></section>;
+  return <section className={`page-hero shell motif-${motif}`} data-hero-variant={motif}><div className="page-hero-copy">{eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}<h1>{title}</h1><p>{description}</p>{children}<Link className="pap-hero-callout" href="/roadmap"><span className="pap-callout-icon" aria-hidden="true">01</span><span><strong>Pay After Placement</strong><small>Review eligible programs and written terms.</small></span><ArrowRight size={17} /></Link></div><div className="page-hero-visual"><LearningArtifact variant={motif} /></div></section>;
 }
 function ContactStrip() { return <div className="contact-strip"><span>Want help choosing a track?</span><Link href="/contact" className="text-link">Talk to the academy <ArrowUpRight size={16} /></Link></div>; }
 function CourseSchema({ course }: { course: Course }) {
@@ -20,7 +21,7 @@ function CourseSchema({ course }: { course: Course }) {
 
 function CourseDetail({ course }: { course: Course }) {
   return <main id="main-content" className="route-main"><CourseSchema course={course} /><div className="shell breadcrumb"><Link href="/">Home</Link><ChevronRight size={14} /><Link href="/courses">Courses</Link><ChevronRight size={14} /><span>{course.title}</span></div>
-    <section className="course-detail-hero shell"><div className="course-detail-copy"><div className="detail-chips"><span>{course.category}</span>{course.duration && <span>{course.duration}</span>}<span>{course.audience || 'Practical learning'}</span></div><h1>{course.title}<span className="hero-period">.</span></h1><p className="course-detail-intro">{course.description}</p><div className="hero-actions"><a href={whatsAppLink(`Hi Karka team, I would like to enquire about ${course.title}. Please share the current syllabus, eligibility, batch details and payment terms.`)} className="button button-primary button-large" target="_blank" rel="noopener noreferrer">Enquire about this course <ArrowUpRight size={17} /></a><Link className="button button-quiet button-large" href="/courses">Compare other tracks <ArrowRight size={16} /></Link></div><p className="hero-footnote">Ask the team about the current schedule, course prerequisites and batch availability.</p></div><div className="course-detail-art course-detail-3d"><HeroScene variant={course.category === 'School' ? 'school' : course.category === 'Internship' ? 'internship' : course.category === 'AI & Data' ? (course.slug.includes('data') ? 'data' : 'ai') : course.category === 'Design' ? (['video-editing', 'multimedia-animation', 'graphic-designing-dm'].includes(course.slug) ? 'media' : 'design') : course.category === 'Business' ? 'business' : 'coding'} /><div className="detail-art-chip chip-top">PRACTICE <Check size={13} /></div><div className="detail-art-chip chip-bottom">PROJECTS <Code2 size={13} /></div></div></section>
+    <section className="course-detail-hero shell"><div className="course-detail-copy"><div className="detail-chips"><span>{course.category}</span>{course.duration && <span>{course.duration}</span>}<span>{course.audience || 'Practical learning'}</span></div><h1>{course.title}<span className="hero-period">.</span></h1><p className="course-detail-intro">{course.description}</p><div className="hero-actions"><a href={whatsAppLink(`Hi Karka team, I would like to enquire about ${course.title}. Please share the current syllabus, eligibility, batch details and payment terms.`)} className="button button-primary button-large" target="_blank" rel="noopener noreferrer">Enquire about this course <ArrowUpRight size={17} /></a><Link className="button button-quiet button-large" href="/courses">Compare other tracks <ArrowRight size={16} /></Link></div><p className="hero-footnote">Ask the team about the current schedule, course prerequisites and batch availability.</p></div><div className="course-detail-art course-detail-3d"><LearningArtifact variant={course.category === 'School' ? 'school' : course.category === 'Internship' ? 'internship' : course.category === 'AI & Data' ? (course.slug.includes('data') ? 'data' : 'ai') : course.category === 'Design' ? (['video-editing', 'multimedia-animation', 'graphic-designing-dm'].includes(course.slug) ? 'media' : 'design') : course.category === 'Business' ? 'business' : 'coding'} /></div></section>
     <section className="section-pad shell"><div className="section-heading-row"><div><Eyebrow>Course overview</Eyebrow><h2>Learn the concepts.<br /><span className="text-purple">Practice the craft.</span></h2></div><p>This page is for understanding the track. The academy may confirm the current curriculum, schedule, instructor details and any prerequisites with you directly.</p></div><div className="detail-content-grid"><article className="detail-panel"><span className="panel-icon"><Layers3 size={21} /></span><h3>Skills you can explore</h3><p>Topics referenced for this track include:</p><div className="skill-list">{course.skills.map((skill) => <span key={skill}><Check size={15} />{skill}</span>)}</div></article><article className="detail-panel"><span className="panel-icon"><BriefcaseBusiness size={21} /></span><h3>Practice and portfolio</h3><p>Karka’s Apply the skills from this track through practical projects and use your work to build a portfolio.</p><Link href="/placement" className="text-link">Explore career support <ArrowUpRight size={16} /></Link></article><article className="detail-panel"><span className="panel-icon"><Handshake size={21} /></span><h3>Mentorship and guidance</h3><p>Discuss the teaching format, mentor access, feedback cadence and the support available during projects before making a decision.</p><Link href="/about-us" className="text-link">About the academy <ArrowUpRight size={16} /></Link></article></div></section>
     {/*<section className="section-pad section-soft"><div className="shell"><div className="section-heading-row"><div><Eyebrow>What to look for in learner feedback</Eyebrow><h2>Make progress you can<br/>explain and demonstrate<span className="hero-period">.</span></h2></div><p>Use these review prompts to ask about the {course.title} experience. They are illustrative themes, not verified student testimonials.</p></div><div className="course-review-prompts">{['Was the project brief realistic and clearly scoped?','Did feedback help you improve the work?','Could you explain the final project and your contribution?'].map((prompt,i)=><article className="testimonial-card course-review-prompt" key={prompt}><div className="testimonial-stars" aria-hidden="true">✳ ✳</div><blockquote>“{prompt}”</blockquote><div className="testimonial-divider"/><div className="testimonial-bottom"><span className={`testimonial-avatar avatar-${i}`}>{['P','F','S'][i]}</span><span><strong>Review prompt {String(i+1).padStart(2,'0')}</strong><small>Questions to verify with current learners</small></span></div></article>)}</div><p className="review-note">We do not publish invented student reviews or ratings. Add authentic, permissioned feedback from learners for this course when available.</p></div></section>*/}
     <section className="course-detail-cta"><div className="shell course-detail-cta-inner"><div><Eyebrow>Take the next step</Eyebrow><h2>Is this the right track for you?</h2><p>Talk with the team about your goals, course fit and the details to consider before enrolling.</p></div><div className="course-detail-cta-actions"><a href={whatsAppLink(`Hi Karka team, I am interested in ${course.title}. Can we discuss course fit, prerequisites and the applicable fee terms?`)} className="button button-primary" target="_blank" rel="noopener noreferrer">Discuss this track <MessageCircle size={16} /></a><Link href="/courses" className="button button-secondary">Browse all tracks</Link></div></div></section>
@@ -113,7 +114,78 @@ function RoadmapPage() {
 }
 
 function AboutPage() {
-  return <main id="main-content" className="route-main"><PageHero variant="about" eyebrow="About Karka" title="Technology education should connect learning with doing." description="Explore Karka’s approach to practical technology education, project work and career preparation."><div className="hero-actions"><Link href="/courses" className="button button-primary">Explore programs <ArrowRight size={16} /></Link><Link href="/contact" className="button button-quiet">Connect with Karka <ArrowUpRight size={16} /></Link></div></PageHero><section className="section-pad shell mission-grid"><div className="mission-main"><Eyebrow>Our mission</Eyebrow><h2>Bridge the gap between learning and real-world practice.</h2><p className="body-large">The Karka model brings technical foundations, practical projects, mentoring and career preparation into one learning journey.</p></div><div className="mission-side"><article><span>01</span><h3>Learn with context</h3><p>Make the purpose behind tools and concepts clear.</p></article><article><span>02</span><h3>Practice intentionally</h3><p>Build and refine work instead of stopping at theory.</p></article><article><span>03</span><h3>Prepare for next steps</h3><p>Develop the portfolio and communication habits that help explain your skills.</p></article></div></section><section className="section-pad section-soft"><div className="shell mentor-layout"><div className="mentor-art"><div className="mentor-initials">"*"</div><span className="mentor-caption">MENTORSHIP · PRACTICE · GROWTH</span><div className="mentor-orbit orbit-a" /><div className="mentor-orbit orbit-b" /></div><div className="mentor-copy"><Eyebrow>Mentorship</Eyebrow><h2>Learn from people who know the work.</h2><p>Karka’s mentor Sateesh Kumar with more than 18 years of technology-industry experience, including work with Flow Global, Wipro and Yatra.com.</p><a href="https://www.linkedin.com/company/karka-academy/" className="text-link" target="_blank" rel="noopener noreferrer">Visit Karka on LinkedIn <ArrowUpRight size={16} /></a><div className="mentor-facts"><span><Check size={15} /> Industry perspective</span><span><Check size={15} /> Practical guidance</span><span><Check size={15} /> Career readiness</span></div></div></div></section><section className="section-pad shell"><div className="section-heading-row"><div><Eyebrow>Part of the ecosystem</Eyebrow><h2>Learning, projects<br />and community.</h2></div><p>Explore Karka’s learning platform and student competition experience through their official channels.</p></div><div className="about-platform-links"><a href="https://spike.karka.academy/" target="_blank" rel="noopener noreferrer"><span className="about-platform-icon"><Sparkles size={22} /></span><span><strong>Spike AI</strong><small>AI-guided learning platform</small></span><ArrowUpRight size={17} /></a><a href="https://infini.karka.academy/" target="_blank" rel="noopener noreferrer"><span className="about-platform-icon about-platform-yellow"><Target size={22} /></span><span><strong>InfiniAI</strong><small>Student competition platform</small></span><ArrowUpRight size={17} /></a></div></section></main>;
+  return (
+    <main id="main-content" className="route-main">
+      <PageHero
+        variant="about"
+        eyebrow="About Karka"
+        title="Technology education should connect learning with doing."
+        description="Explore Karka’s approach to practical technology education, project work and career preparation."
+      >
+        <div className="hero-actions">
+          <Link href="/courses" className="button button-primary">Explore programs <ArrowRight size={16} /></Link>
+          <Link href="/contact" className="button button-quiet">Connect with Karka <ArrowUpRight size={16} /></Link>
+        </div>
+      </PageHero>
+      <section className="section-pad shell mission-grid">
+        <div className="mission-main">
+          <Eyebrow>Our mission</Eyebrow>
+          <h2>Bridge the gap between learning and real-world practice.</h2>
+          <p className="body-large">The Karka model brings technical foundations, practical projects, mentoring and career preparation into one learning journey.</p>
+        </div>
+        <div className="mission-side">
+          <article><span>01</span><h3>Learn with context</h3><p>Make the purpose behind tools and concepts clear.</p></article>
+          <article><span>02</span><h3>Practice intentionally</h3><p>Build and refine work instead of stopping at theory.</p></article>
+          <article><span>03</span><h3>Prepare for next steps</h3><p>Develop the portfolio and communication habits that help explain your skills.</p></article>
+        </div>
+      </section>
+      <section className="section-pad section-soft">
+        <div className="shell mentor-layout">
+          <div className="mentor-art" aria-hidden="true">
+            <div className="mentor-art-head"><span>Mentorship notes</span><span>01</span></div>
+            <div className="mentor-art-body">
+              <div className="mentor-art-years"><strong>18<span>+</span></strong><p>years in technology</p></div>
+              <div className="mentor-art-signals">
+                <div className="mentor-art-signal"><small>01</small><span>Industry perspective</span></div>
+                <div className="mentor-art-signal"><small>02</small><span>Practical guidance</span></div>
+                <div className="mentor-art-signal"><small>03</small><span>Career readiness</span></div>
+              </div>
+            </div>
+            <div className="mentor-art-foot">Mentorship <span>·</span> Practice <span>·</span> Growth</div>
+          </div>
+          <div className="mentor-copy">
+            <Eyebrow>Mentorship</Eyebrow>
+            <h2>Learn from people who know the work.</h2>
+            <p>Karka’s mentor Sateesh Kumar with more than 18 years of technology-industry experience, including work with Flow Global, Wipro and Yatra.com.</p>
+            <a href="https://www.linkedin.com/company/karka-academy/" className="text-link" target="_blank" rel="noopener noreferrer">Visit Karka on LinkedIn <ArrowUpRight size={16} /></a>
+            <div className="mentor-facts">
+              <span><Check size={15} /> Industry perspective</span>
+              <span><Check size={15} /> Practical guidance</span>
+              <span><Check size={15} /> Career readiness</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section-pad shell">
+        <div className="section-heading-row">
+          <div><Eyebrow>Part of the ecosystem</Eyebrow><h2>Learning, projects<br />and community.</h2></div>
+          <p>Explore Karka’s learning platform and student competition experience through their official channels.</p>
+        </div>
+        <div className="about-platform-links">
+          <a href="https://spike.karka.academy/" target="_blank" rel="noopener noreferrer">
+            <span className="about-platform-icon"><BookOpen size={22} /></span>
+            <span><strong>Spike AI</strong><small>AI-guided learning platform</small></span>
+            <ArrowUpRight size={17} />
+          </a>
+          <a href="https://infini.karka.academy/" target="_blank" rel="noopener noreferrer">
+            <span className="about-platform-icon about-platform-yellow"><Target size={22} /></span>
+            <span><strong>InfiniAI</strong><small>Student competition platform</small></span>
+            <ArrowUpRight size={17} />
+          </a>
+        </div>
+      </section>
+    </main>
+  );
 }
 
 function ContactPage() {
@@ -123,7 +195,7 @@ function ContactPage() {
 function MailIcon() { return <Mail size={18} />; }
 
 function BlogPage() {
-  return <main id="main-content" className="route-main"><PageHero variant="insight" eyebrow="Karka insights" title="Ideas for learning, building and moving forward." description="Practical guides can help you make better decisions about what to learn, what to build and how to explain your work." /><section className="section-pad shell"><div className="blog-grid">{blogPosts.map((post, i) => <article className="blog-card" key={post.slug}><Link className={`blog-art blog-art-${i}`} href={`/blog/${post.slug}`} aria-label={`Read ${post.title}`}><span>{['CAREER NOTES', 'AI LEARNING', 'BUILD GUIDE'][i]}</span><div className="blog-art-symbol">{['↗', '✳', '{ }'][i]}</div><ArrowUpRight size={19} /></Link><div className="blog-card-meta"><span>{post.category}</span><span>{post.read}</span></div><h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2><p>{post.summary}</p><Link className="text-link" href={`/blog/${post.slug}`}>Read guide <ArrowRight size={15} /></Link></article>)}</div><p className="catalog-footnote">These articles are for general reference. Confirm current course details and guidance directly with the academy.</p></section></main>;
+  return <main id="main-content" className="route-main"><PageHero variant="insight" eyebrow="Karka insights" title="Ideas for learning, building and moving forward." description="Practical guides can help you make better decisions about what to learn, what to build and how to explain your work." /><section className="section-pad shell"><div className="blog-grid">{blogPosts.map((post, i) => <article className="blog-card" key={post.slug}><Link className={`blog-art blog-art-${i}`} href={`/blog/${post.slug}`} aria-label={`Read ${post.title}`}><span>{['Career notes', 'AI learning', 'Build guide'][i]}</span><div className="blog-art-symbol">{`0${i + 1}`}</div><ArrowUpRight size={19} /></Link><div className="blog-card-meta"><span>{post.category}</span><span>{post.read}</span></div><h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2><p>{post.summary}</p><Link className="text-link" href={`/blog/${post.slug}`}>Read guide <ArrowRight size={15} /></Link></article>)}</div><p className="catalog-footnote">These articles are for general reference. Confirm current course details and guidance directly with the academy.</p></section></main>;
 }
 
 function BlogArticle({ slug }: { slug: string }) {
@@ -166,7 +238,7 @@ function BlogArticle({ slug }: { slug: string }) {
     },
   };
   const article = content[slug];
-  return <main id="main-content" className="route-main"><div className="shell breadcrumb"><Link href="/">Home</Link><ChevronRight size={14} /><Link href="/blog">Insights</Link><ChevronRight size={14} /><span>{post.category}</span></div><article className="article-body shell"><div className={`article-cover blog-art-${blogPosts.findIndex((item) => item.slug === slug)}`}><span>{post.category.toUpperCase()}</span><strong>{post.title}</strong><span className="article-cover-glyph">✳</span></div><div className="article-meta"><span>{post.read}</span><span>Learning guide</span></div><h1>{post.title}</h1><p className="article-lead">{article.intro}</p>{article.sections.map((section) => <section key={section.h}><h2>{section.h}</h2><p>{section.p}</p></section>)}<div className="article-endnote"><Sparkles size={20} /><div><h3>Keep building</h3><p>Explore Karka’s course tracks or talk to the academy about the skills you want to develop.</p><Link href="/courses" className="text-link">Browse courses <ArrowRight size={15} /></Link></div></div><Link href="/blog" className="back-link"><ArrowLeft size={15} /> Back to insights</Link></article></main>;
+  return <main id="main-content" className="route-main"><div className="shell breadcrumb"><Link href="/">Home</Link><ChevronRight size={14} /><Link href="/blog">Insights</Link><ChevronRight size={14} /><span>{post.category}</span></div><article className="article-body shell"><div className={`article-cover blog-art-${blogPosts.findIndex((item) => item.slug === slug)}`}><span>{post.category}</span><strong>{post.title}</strong><span className="article-cover-glyph">01</span></div><div className="article-meta"><span>{post.read}</span><span>Learning guide</span></div><h1>{post.title}</h1><p className="article-lead">{article.intro}</p>{article.sections.map((section) => <section key={section.h}><h2>{section.h}</h2><p>{section.p}</p></section>)}<div className="article-endnote"><BookOpen size={20} /><div><h3>Keep building</h3><p>Explore Karka’s course tracks or talk to the academy about the skills you want to develop.</p><Link href="/courses" className="text-link">Browse courses <ArrowRight size={15} /></Link></div></div><Link href="/blog" className="back-link"><ArrowLeft size={15} /> Back to insights</Link></article></main>;
 }
 
 function LegalPage({ path }: { path: string }) {

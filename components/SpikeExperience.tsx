@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { Activity, ArrowUpRight, BrainCircuit, GraduationCap, Play, Sparkles, Target, UserRound, Zap } from 'lucide-react';
+import { Activity, ArrowUpRight, BrainCircuit, GraduationCap, Play, Target, UserRound, Zap } from 'lucide-react';
 
 const SPIKE_URL = 'https://spike.karka.academy/';
 
@@ -41,8 +41,8 @@ export default function SpikeExperience() {
     <section className="spike-experience" aria-labelledby="spike-preview-title">
       <div className="spike-experience-grid">
         <div className="spike-preview-panel">
-          <div className="spike-preview-top"><span className="spike-live-dot"/><span>SPIKE AI</span></div>
-          <div className="spike-console-title"><span className="spike-logo-glyph"><Zap size={21}/></span><div><span className="spike-micro-label">ASK A QUESTION</span><h3 id="spike-preview-title">What would you like to learn?</h3></div></div>
+          <div className="spike-preview-top"><span className="spike-live-dot"/><span>Spike AI</span></div>
+          <div className="spike-console-title"><span className="spike-logo-glyph"><Zap size={21}/></span><div><span className="spike-micro-label">Ask a question</span><h3 id="spike-preview-title">What would you like to learn?</h3></div></div>
           <p className="spike-console-copy">Your question will be included in the Spike AI link.</p>
           <form className="spike-question-form" onSubmit={handleSubmit}>
             <label htmlFor="spike-question" className="sr-only">Type a question for Spike AI</label>
@@ -52,7 +52,7 @@ export default function SpikeExperience() {
           <p className="spike-status" aria-live="polite">{status}</p>
           <div className="spike-prompt-features">
             <div className="spike-prompt-feature-heading">
-              <span className="spike-micro-label">MEET YOUR AI-POWERED LEARNING PARTNER</span>
+              <span className="spike-micro-label">An AI-guided learning partner</span>
               <h4>Transform how you <em>teach.</em><br/>Amplify how they <em>learn.</em></h4>
               <p>Build engaging programs that develop real-world skills for an AI-first world.</p>
             </div>

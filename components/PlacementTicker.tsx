@@ -18,7 +18,7 @@ function LogoRun({ clone = false }: { clone?: boolean }) {
 export default function PlacementTicker() {
   return (
     <section className="placement-destinations" aria-labelledby="placement-destinations-title">
-      <div className="shell placement-destinations-head"><div><span className="stories-eyebrow"><span className="stories-pulse" /> CAREER DESTINATIONS</span><h2 id="placement-destinations-title">Where our Karka graduates work<span>.</span></h2></div><p>From classrooms in Nagercoil to careers across India, our students are making their mark at leading tech companies.</p></div>
+      <div className="shell placement-destinations-head"><div><span className="stories-eyebrow"><span className="stories-pulse" /> Career destinations</span><h2 id="placement-destinations-title">Where our Karka graduates work<span>.</span></h2></div><p>From classrooms in Nagercoil to careers across India, our students are making their mark at leading tech companies.</p></div>
       <div className="placement-logo-marquee" aria-label="Company logos displayed in Karka's original graduate destinations section">
         <div className="placement-logo-track"><LogoRun /><LogoRun clone /></div>
       </div>

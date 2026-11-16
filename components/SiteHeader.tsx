@@ -37,13 +37,12 @@ export default function SiteHeader() {
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to content</a>
-      <div className="top-ribbon"><span className="ribbon-dot" /> AI-first learning. Real projects. Career-focused mentorship. <Link href="/roadmap">See how the journey works <ArrowUpRight size={13} /></Link></div>
       <header className="site-header">
         <div className="header-inner shell">
           <Link href="/" className="brand-link" aria-label="Karka AI & Tech Academy home" onClick={closeMenus}>
             <Image src="/karka-logo.webp" alt="Karka AI Academy official logo" width={180} height={47} priority className="brand-logo" />
           </Link>
-          <nav className={`primary-nav ${mobileOpen ? 'is-open' : ''}`} aria-label="Main navigation">
+          <nav id="primary-navigation" className={`primary-nav ${mobileOpen ? 'is-open' : ''}`} aria-label="Main navigation">
             <Link className={pathname === '/courses' ? 'nav-link active' : 'nav-link'} href="/courses" onClick={closeMenus}>Courses</Link>
             <div className="nav-dropdown-wrap">
               <button className={`nav-link nav-dropdown-button ${audiencesOpen ? 'active' : ''}`} type="button" aria-expanded={audiencesOpen} onClick={() => setAudiencesOpen(!audiencesOpen)}>For learners <ChevronDown size={15} /></button>
@@ -55,7 +54,7 @@ export default function SiteHeader() {
             <div className="mobile-nav-tail"><ThemeToggle /><Link className="button button-primary mobile-contact" href="/contact" onClick={closeMenus}>Talk to us <ArrowUpRight size={16} /></Link></div>
           </nav>
           <div className="header-actions"><ThemeToggle /><Link className="button button-primary header-cta" href="/contact">Talk to us <ArrowUpRight size={16} /></Link></div>
-          <button className="mobile-menu-toggle" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-expanded={mobileOpen} type="button" onClick={() => setMobileOpen(!mobileOpen)}>
+          <button className="mobile-menu-toggle" aria-label={mobileOpen ? 'Close menu' : 'Open menu'} aria-controls="primary-navigation" aria-expanded={mobileOpen} type="button" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>

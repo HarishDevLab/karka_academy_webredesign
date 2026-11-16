@@ -41,12 +41,12 @@ export default function LearnerVideos() {
     <section className="learner-videos section-pad" id="learner-videos" aria-labelledby="learner-videos-title">
       <div className="shell">
         <div className="learner-videos-heading">
-          <div><span className="stories-eyebrow"><span className="stories-pulse" /> EIGHT VIDEO SPOTLIGHTS · REAL PEOPLE, REAL JOURNEYS</span><h2 id="learner-videos-title">Hear it in their<br /><em>own words.</em></h2></div>
+          <div><span className="stories-eyebrow"><span className="stories-pulse" /> Learner video stories</span><h2 id="learner-videos-title">Hear it in their<br /><em>own words.</em></h2></div>
           <div className="videos-heading-aside"><p>A video gallery for learner journeys. Choose a person to preview their video.Videos loaded from original karka website.</p><a className="stories-instagram-link" href={INSTAGRAM_PROFILE} target="_blank" rel="noopener noreferrer"><Instagram size={17} /> Follow @karka.ai <ArrowUpRight size={15} /></a></div>
         </div>
         <div className="learner-video-layout">
           <div className="learner-video-player" aria-live="polite">
-            <div className="video-player-chrome"><span><span className="video-live-dot" /> LEARNER SPOTLIGHT / 0{selectedIndex + 1}</span><span>{hasVideo || hasReel ? 'VIDEO READY' : 'LINK TO BE ADDED'}</span></div>
+            <div className="video-player-chrome"><span><span className="video-live-dot" /> Learner story / 0{selectedIndex + 1}</span><span>{hasVideo || hasReel ? 'Video ready' : 'Link to be added'}</span></div>
             {hasVideo && !videoError ? (
               <div className="learner-video-frame"><video key={selected.videoUrl} src={selected.videoUrl} controls playsInline preload="metadata" aria-label={`Learner story video: ${selected.name}`} onError={() => setVideoError(true)} /></div>
             ) : hasReel ? (
@@ -54,7 +54,7 @@ export default function LearnerVideos() {
             ) : (
               <div className={`learner-video-placeholder video-placeholder-${selected.color}`}>
                 <div className="placeholder-play-orbit"><span><Play size={24} fill="currentColor" /></span></div>
-                <span className="placeholder-kicker">VIDEO SLOT 0{selectedIndex + 1} / 08</span>
+                <span className="placeholder-kicker">Video preview 0{selectedIndex + 1} / 08</span>
                 <h3>{selected.name}</h3><p>{selected.course}</p>
                 <div className="placeholder-link-note">This slot is ready for Instagram Reel URL.</div>
               </div>

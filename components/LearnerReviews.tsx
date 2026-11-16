@@ -14,7 +14,7 @@ export default function LearnerReviews() {
     <section className="learner-reviews section-pad" id="learner-reviews" aria-labelledby="learner-reviews-title">
       <div className="shell">
         <div className="learner-reviews-heading">
-          <div><span className="stories-eyebrow"><span className="stories-pulse" /> SIX LEARNER VOICES · COURSE-SPECIFIC FEEDBACK</span><h2 id="learner-reviews-title">Honest learning stories.<br /><em>Useful perspective.</em></h2></div>
+          <div><span className="stories-eyebrow"><span className="stories-pulse" /> Learner feedback</span><h2 id="learner-reviews-title">Honest learning stories.<br /><em>Useful perspective.</em></h2></div>
           <div className="reviews-heading-aside"><p>Feedback excerpts from Karka’s supplied public website snapshot. Each card names the learner and the course or support area mentioned.</p><a className="stories-instagram-link" href="https://www.instagram.com/karka.ai/" target="_blank" rel="noopener noreferrer">More from @karka.ai <ArrowUpRight size={15} /></a></div>
         </div>
         <div className="learner-review-grid">

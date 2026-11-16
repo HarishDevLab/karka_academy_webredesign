@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Search, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Search } from 'lucide-react';
 import type { Course } from '@/lib/content';
 
 const filters = ['All', 'Coding', 'AI & Data', 'Design', 'Business', 'School', 'Internship'] as const;
@@ -28,10 +28,9 @@ export default function CourseCatalog({ courses, compact = false }: { courses: C
       <div className={`course-grid ${compact ? 'course-grid-compact' : ''}`}>
         {filtered.map((course, index) => <article className="course-card" key={course.slug}>
           <div className={`course-card-art art-tone-${index % 4}`}>
-            <span className="course-art-number">{String(index + 1).padStart(2, '0')}</span>
-            <div className="course-art-orbit orbit-a" /><div className="course-art-orbit orbit-b" />
-            <span className="course-art-glyph">{course.category === 'AI & Data' ? 'AI' : course.category === 'Design' ? '✳' : course.category === 'Business' ? '↗' : course.category === 'School' ? '⌘' : course.category === 'Internship' ? '↗' : '{ }'}</span>
-            <span className="course-category">{course.category}</span>
+            <div className="course-art-top"><span className="course-art-number">{String(index + 1).padStart(2, '0')}</span><span className="course-category">{course.category}</span></div>
+            <span className="course-art-rule" aria-hidden="true" />
+            <strong className="course-art-words">{course.title}</strong>
           </div>
           <div className="course-card-body">
             <div className="course-card-meta"><span>{course.audience || 'Practical learning track'}</span>{course.duration && <span>{course.duration}</span>}</div>
@@ -42,7 +41,7 @@ export default function CourseCatalog({ courses, compact = false }: { courses: C
           </div>
         </article>)}
       </div>
-      {filtered.length === 0 && <div className="empty-state"><Sparkles size={22} /><h3>No matching courses</h3><p>Try another search or choose a different category.</p><button className="button button-secondary" onClick={() => { setFilter('All'); setQuery(''); }} type="button">Reset filters</button></div>}
+      {filtered.length === 0 && <div className="empty-state"><h3>No matching courses</h3><p>Try another search or choose a different category.</p><button className="button button-secondary" onClick={() => { setFilter('All'); setQuery(''); }} type="button">Reset filters</button></div>}
       {!compact && <p className="catalog-footnote">Course content, duration, batch availability and eligibility may change. Confirm the current details with Karka.</p>}
       {compact && <div className="catalog-view-all"><Link className="button button-secondary" href="/courses">Explore all career tracks <ArrowRight size={16} /></Link></div>}
     </div>

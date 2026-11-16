@@ -1,10 +1,10 @@
 import { BookOpenCheck, BriefcaseBusiness, CheckCircle2, Coins, FolderKanban } from 'lucide-react';
 
 const stages = [
-  { icon: BookOpenCheck, label: 'LEARN', title: 'Build skills', color: 'learn' },
-  { icon: FolderKanban, label: 'BUILD', title: 'Prove your work', color: 'build' },
-  { icon: BriefcaseBusiness, label: 'PLACEMENT', title: 'Qualifying role', color: 'placed' },
-  { icon: Coins, label: 'THEN', title: 'Payment per terms', color: 'payment' },
+  { icon: BookOpenCheck, label: 'Learn', title: 'Build skills', color: 'learn' },
+  { icon: FolderKanban, label: 'Build', title: 'Prove your work', color: 'build' },
+  { icon: BriefcaseBusiness, label: 'Placement', title: 'Qualifying role', color: 'placed' },
+  { icon: Coins, label: 'Then', title: 'Payment per terms', color: 'payment' },
 ];
 
 export default function PayAfterPlacementVisual() {

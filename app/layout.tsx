@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import './redesign.css';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import ScrollEffects from '@/components/ScrollEffects';
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: 'Karka AI & Tech Academy', description: 'Build practical skills, work on projects and prepare for your next career step.', images: ['/og-karka.png'] },
 };
 
-export const viewport: Viewport = { width: 'device-width', initialScale: 1, maximumScale: 5, themeColor: '#7c3aed' };
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, maximumScale: 5, themeColor: '#f4f0e7' };
 
 const orgJsonLd = {
   '@context': 'https://schema.org',
@@ -72,10 +73,10 @@ const orgJsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-IN" data-theme="dark" suppressHydrationWarning>
+    <html lang="en-IN" data-theme="light" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/karka-logo.webp" type="image/webp" />
-        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('karka-theme');var v=t==='light'?'light':'dark';document.documentElement.dataset.theme=v;document.documentElement.style.colorScheme=v}catch(e){document.documentElement.dataset.theme='dark';document.documentElement.style.colorScheme='dark'}" }} />
+        <script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('karka-theme');var v=t==='dark'?'dark':'light';document.documentElement.dataset.theme=v;document.documentElement.style.colorScheme=v}catch(e){document.documentElement.dataset.theme='light';document.documentElement.style.colorScheme='light'}" }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd).replace(/</g, '\\u003c') }} />
       </head>
       <body>
